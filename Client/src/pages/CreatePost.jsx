@@ -16,7 +16,7 @@ const CreatePost = () => {
     const [generatingImg, setGeneratingImg] = useState(false);
     const [loading, setLoading]= useState(false);
 
-    const generatingImage = async () => {
+    const generateImage = async () => {
         if(form.prompt) {
             try {
                 setGeneratingImg(true);
@@ -73,7 +73,7 @@ const CreatePost = () => {
                     handleChange={handleChange}
                 />
                 <FormField 
-                    labelName='prompt'
+                    labelName='Prompt'
                     type='text'
                     name='prompt'
                     placeholder='A comic book cover of a superhero wearing headphones'
@@ -109,7 +109,7 @@ const CreatePost = () => {
             <div className='mt-5 flex gap-5'>
                 <button
                     type='button'
-                    onClick={generatingImage}
+                    onClick={generateImage}
                     className='text-white bg-green-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center'
                 >
                     {generatingImg ? 'Generating...' : 'Generate'}
@@ -121,7 +121,7 @@ const CreatePost = () => {
                     Once you have created the image you want, you can share it with others in the community.
                 </p>
                 <button
-                    type='button'
+                    type='submit'
                     className='mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center'
                 >
                     {loading ? 'Sharing...' : 'Share with the community'}
